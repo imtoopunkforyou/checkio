@@ -18,12 +18,14 @@ Output: Int
 """
 
 def nearest_value(values: set, one: int) -> int:
-    distance_dict = {}
-    for i in values:
-        distance = abs(one - i)
-        distance_dict[i] = distance
-        result = min(distance_dict.items(), key=lambda item: int(item[1]))[0]
-    return result
+    distance_list = []
+    for number in values:
+        distance = abs(one - number)
+        distance_list.append(distance)
+    if len(distance_list) != len(set(distance_list)):
+        index_of_double = [i for i,x in enumerate(distance_list) if distance_list.count(x)>1]
+        
+        # TODO попробовать сделать из сета лист и, запомнить индексы и удалить повторяшки по индексу
 
 
 if __name__ == '__main__':
