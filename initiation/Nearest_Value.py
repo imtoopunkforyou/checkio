@@ -19,13 +19,19 @@ Output: Int
 
 def nearest_value(values: set, one: int) -> int:
     distance_list = []
+    if one in values:
+        return one
     for number in values:
-        distance = abs(one - number)
-        distance_list.append(distance)
-    if len(distance_list) != len(set(distance_list)):
-        index_of_double = [i for i,x in enumerate(distance_list) if distance_list.count(x)>1]
+        distance_list.append((number, abs(one - number)))
+    distance_list.sort(key=lambda tup: (tup[1], tup[0]))
+    if distance_list[0][1] == distance_list[1][1]:
+        if distance_list[0][0] <= distance_list[1][0]:
+            return distance_list[0][0]
+        else:
+            return distance_list[1][0]
+    return distance_list[0][0]
+    
         
-        # TODO попробовать сделать из сета лист и, запомнить индексы и удалить повторяшки по индексу
 
 
 if __name__ == '__main__':
