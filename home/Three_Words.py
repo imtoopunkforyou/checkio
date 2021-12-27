@@ -4,23 +4,38 @@ Input: A string with words.
 
 Output: The answer as a boolean."""
 
+
 def checkio(words: str) -> bool:
     words = words.split(' ')
-    index = 0
-    three_elements = words[index:index+4:1]
-    for i in three_elements:
+    words_tuple_three_elements = []
+    if len(words) <= 3:
         true_count = 0
-        if i.isalpha():
-            true_count+=1
-    if true_count == 3:
-        return True
-            
+        for i in words:
+            if i.isalpha():
+                true_count += 1
+        if true_count == 3:
+            return True
+        else:
+            return False
+    else:
+        for i in range(0, len(words)-2):
+            words_tuple_three_elements.append(
+                (words[i], words[i+1], words[i+2]))
+        for i in words_tuple_three_elements:
+            true_count = 0
+            for z in range(0, len(i)):
+                if i[z].isalpha():
+                    true_count += 1
+            if true_count == 3:
+                return True
+        return False
 
-#These "asserts" using only for self-checking and not necessary for auto-testing
+
+# These "asserts" using only for self-checking and not necessary for auto-testing
 if __name__ == '__main__':
     print('Example:')
     print(checkio("Hello World hello"))
-    
+
     assert checkio("Hello World hello") == True, "Hello"
     assert checkio("He is 123 man") == False, "123 man"
     assert checkio("1 2 3 4") == False, "Digits"
