@@ -1,3 +1,5 @@
-words = 'hello'
-new = words.split(' ')
-print(new[0:10:1])
+def left_join(phrases: tuple) -> str:
+    new_str = phrases.split(',')
+    return new_str
+
+print(left_join(("bright aright", "ok")))
