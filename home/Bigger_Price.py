@@ -6,9 +6,10 @@ Input: int and list of dicts. Each dicts has two keys "name" and "price"
 
 Output: the same as the second Input argument."""
 
+
 def bigger_price(limit: int, data: list) -> list:
-    data_sort = sorted(data, key=lambda k: k['price'])
-    return data_sort[:limit]
+    data_sort = sorted(data, key=lambda k: k["price"])
+    return data_sort[:limit-1:-1]
 
 
 if __name__ == '__main__':
