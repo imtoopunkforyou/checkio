@@ -10,6 +10,7 @@ Input: A string.
 
 Output: A string."""
 
+
 def first_word(text: str) -> str:
     text = text.replace('.', ' ')
     text = text.replace(',', ' ')

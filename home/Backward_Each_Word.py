@@ -4,12 +4,14 @@ Input: A string.
 
 Output: A string."""
 
+
 def backward_string_by_word(text: str) -> str:
     text = text.split(' ')
     temp = []
     for i in text:
         temp.append(i[::-1])
     return ' '.join(temp)
+
 
 if __name__ == '__main__':
     print("Example:")

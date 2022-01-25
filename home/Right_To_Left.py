@@ -6,13 +6,14 @@ Input: A sequence of strings.
 
 Output: The text as a comma-separated string."""
 
+
 def left_join(phrases: tuple) -> str:
     new_str = ''
     for i in phrases:
         new_str = new_str + ',' + i
     new_str = new_str[1::]
     if "right" in new_str:
-         new_str = new_str.replace("right", "left")
+        new_str = new_str.replace("right", "left")
     return new_str
 
 
@@ -24,7 +25,9 @@ if __name__ == "__main__":
     assert (
         left_join(("left", "right", "left", "stop")) == "left,left,left,stop"
     ), "All to left"
-    assert left_join(("bright aright", "ok")) == "bleft aleft,ok", "Bright Left"
+    assert left_join(("bright aright", "ok")
+                     ) == "bleft aleft,ok", "Bright Left"
     assert left_join(("brightness wright",)) == "bleftness wleft", "One phrase"
-    assert left_join(("enough", "jokes")) == "enough,jokes", "Nothing to replace"
+    assert left_join(("enough", "jokes")
+                     ) == "enough,jokes", "Nothing to replace"
     print("Coding complete? Click 'Check' to review your tests and earn cool rewards!")
