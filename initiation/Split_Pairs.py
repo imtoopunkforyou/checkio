@@ -5,6 +5,8 @@ Input: A string.
 
 Output: An iterable of strings.
 """
+
+
 def split_pairs(word):
     pairs = []
     while len(word) != 0:

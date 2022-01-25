@@ -4,10 +4,11 @@ Input: An int.
 
 Output: A bool."""
 
+
 def is_even(num: int) -> bool:
-    last_number = num%10
+    last_number = num % 10
     if last_number % 2 == 0:
-        return True 
+        return True
     else:
         return False
 

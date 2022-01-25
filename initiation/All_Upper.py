@@ -4,16 +4,16 @@ Input: A string.
 
 Output: a boolean."""
 
+
 def is_all_upper(text: str) -> bool:
     void = ''
     all_upper = text.upper()
-    if text.isupper() or text.isdigit() or text.isspace() or text==void:
+    if text.isupper() or text.isdigit() or text.isspace() or text == void:
         return True
     elif all_upper.isupper() == False:
         return True
     else:
         return False
-    
 
 
 if __name__ == '__main__':

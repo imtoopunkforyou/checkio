@@ -4,14 +4,15 @@ Input: A positive Int
 
 Output: An Int."""
 
+
 def end_zeros(num: int) -> int:
     count = 0
     if num == 0:
         count = 1
     else:
-        while (num%10==0):
+        while (num % 10 == 0):
             num //= 10
-            count+=1
+            count += 1
     return count
 
 

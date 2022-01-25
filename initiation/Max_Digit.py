@@ -4,6 +4,7 @@ Input: A positive int.
 
 Output: An Int (0-9)."""
 
+
 def max_digit(number: int) -> int:
     number_list = list(str(number))
     temp = []

@@ -4,6 +4,7 @@ Input: A string.
 
 Output: A string"""
 
+
 def backward_string(val: str) -> str:
     val = val[::-1]
     return val

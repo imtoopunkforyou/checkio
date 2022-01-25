@@ -4,6 +4,7 @@ Input: A positive Int
 
 Output: An Int"""
 
+
 def number_length(a: int) -> int:
     x = len(str(a))
     return x

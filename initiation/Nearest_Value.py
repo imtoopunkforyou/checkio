@@ -17,6 +17,7 @@ Input: Two arguments. A list of values in the set form. The sought value is an i
 Output: Int
 """
 
+
 def nearest_value(values: set, one: int) -> int:
     distance_list = []
     if one in values:
@@ -30,8 +31,6 @@ def nearest_value(values: set, one: int) -> int:
         else:
             return distance_list[1][0]
     return distance_list[0][0]
-    
-        
 
 
 if __name__ == '__main__':
